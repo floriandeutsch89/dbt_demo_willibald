@@ -1,6 +1,7 @@
 ### Using the starter project
 
-1. Download & install python: https://www.python.org/ftp/python/3.12.8/python-3.12.8-amd64.exe
+1. Download & install python:
+ https://www.python.org/ftp/python/3.12.8/python-3.12.8-amd64.exe
 
 2. Install pip:
 
@@ -11,6 +12,7 @@
 ``pip install dbt-duckdb dbt-core``
 
 4. Import csv files
+
  ``dbt seed``
 
 ### Resources:
