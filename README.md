@@ -1,11 +1,17 @@
-Welcome to your new dbt project!
-
 ### Using the starter project
 
-Try running the following commands:
-- dbt run
-- dbt test
+1. Download & install python: https://www.python.org/ftp/python/3.12.8/python-3.12.8-amd64.exe
 
+2. Install pip:
+
+``python -m ensurepip --upgrade``
+
+3. Install dbt:
+
+``pip install dbt-duckdb dbt-core``
+
+4. Import csv files
+ ``dbt seed``
 
 ### Resources:
 - Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
