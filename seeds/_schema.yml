@@ -1,0 +1,157 @@
+version: 2
+
+seeds:
+  - name: bestellung
+    config:
+      delimiter: ';'
+      column_types:
+        BestellungID: int
+        KundeID: int
+        AllgLieferAdrID: int
+        Bestelldatum: varchar(2000)
+        Wunschdatum: varchar(2000)
+        Rabatt: float
+
+  - name: href_termintreue
+    config:
+      delimiter: ';'
+      column_types:
+        Anzahl Tage von: varchar(500)
+        Anzahl Tage bis: varchar(500)
+        Bezeichnung: varchar(500)
+        Bewertung: varchar(500)
+
+  - name: href_termintreue
+    config:
+      delimiter: ';'
+      column_types:
+        Anzahl Tage von: varchar(500)
+        Anzahl Tage bis: varchar(500)
+        Bezeichnung: varchar(500)
+        Bewertung: varchar(500)
+
+  - name: kunde
+    config:
+      delimiter: ';'
+      column_types:
+        # KundeID;VereinsPartnerID;Vorname;Name;Geschlecht;Geburtsdatum;Telefon;Mobil;Email;Kreditkarte;GueltigBis;KKFirma
+        KundeID: int
+        VereinsPartnerID: varchar(500)
+        Vorname: varchar(500)
+        Name: varchar(500)
+        Geschlecht: varchar(500)
+        Geburtsdatum: varchar(500)
+        Telefon: varchar(500)
+        Mobil: varchar(500)
+        Email: varchar(500)
+        Kreditkarte: varchar(500)
+        GueltigBis: varchar(500)
+        KKFirma: varchar(500)        
+
+  - name: lieferadresse
+    config:
+      delimiter: ';'
+      column_types:
+        LieferAdrID: int
+        KundeID: int
+        Strasse: varchar(500)
+        Hausnummer: varchar(500)
+        Adresszusatz: varchar(500)
+        Plz: varchar(500)
+        Ort: varchar(500)
+        Land: varchar(500)
+
+  - name: lieferdienst
+    config:
+      delimiter: ';'
+      column_types:
+        LieferDienstID: int
+        Name: varchar(500)
+        Telefon: varchar(500)
+        Fax: varchar(500)
+        Email: varchar(500)
+        Strasse: varchar(500)
+        Hausnummer: varchar(500)
+        Plz: varchar(500)
+        Ort: varchar(500)
+        Land: varchar(500)        
+
+  - name: Lieferung
+    config:
+      delimiter: ';'
+      column_types:
+        # these columns as attribute: BestellungID;PosID;LieferAdrID;LieferDienstID;LieferDatum
+        BestellungID: int
+        PosID: int
+        LieferAdrID: int
+        LieferDienstID: int
+        LieferDatum: varchar(500)
+
+  - name: position
+    config:
+      delimiter: ';'
+      column_types:
+        # these columns as attribute: BestellungID;PosID;ProduktID;SpezLieferAdrID;Menge;Preis
+        BestellungID: int
+        PosID: int
+        ProduktID: int
+        SpezLieferAdrID: int
+        Menge: int
+        Preis: float
+
+  - name: produkt
+    config:
+      delimiter: ';'
+      column_types:
+        # these columns as attribute: ProduktID;KatID;Bezeichnung;Umfang;Typ;Preis;Pflanzort;Pflanzabstand
+        ProduktID: int
+        KatID: varchar(500)
+        Bezeichnung: varchar(500)
+        Umfang: varchar(500)
+        Typ: varchar(500)
+        Preis: float
+        Pflanzort: varchar(500)
+        Pflanzabstand: varchar(500)
+
+  - name: produktkategorie
+    config:
+      delimiter: ';'
+      column_types:
+        # KatID;OberKatID;Name
+        KatID: varchar(500)
+        OberKatID: varchar(500)
+        Name: varchar(500)
+
+  - name: ref_produkt_typ
+    config:
+      delimiter: ';'
+      column_types:
+        # these columns as attribute: Typ;Bezeichnung
+        Typ: varchar(500)
+        Bezeichnung: varchar(500)
+
+  - name: vereinspartner
+    config:
+      delimiter: ';'
+      column_types:
+        # these columns as attribute: VereinsPartnerID ;KundeIDVerein ;Rabatt1 ;Rabatt2 ;Rabatt3 
+        VereinsPartnerID: varchar(500)
+        KundeIDVerein: int
+        Rabatt1: float
+        Rabatt2: float
+        Rabatt3: float
+
+  - name: wohnort
+    config:
+      delimiter: ';'
+      column_types:
+        # these columns as attribute: KundeID;Von;Bis;Strasse;Hausnummer;Adresszusatz;Plz;Ort;Land
+        KundeID: int
+        Von: varchar(500)
+        Bis: varchar(500)
+        Strasse: varchar(500)
+        Hausnummer: varchar(500)
+        Adresszusatz: varchar(500)
+        Plz: varchar(500)
+        Ort: varchar(500)
+        Land: varchar(500)
