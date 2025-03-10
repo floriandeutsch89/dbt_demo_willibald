@@ -1,0 +1,42 @@
+# http://www.graphviz.org/content/cluster
+
+digraph G {
+  graph [fontname = "Handlee"];
+  node [fontname = "Handlee"];
+  edge [fontname = "Handlee"];
+
+  bgcolor=transparent;
+  rankdir=TD
+
+orderitem [shape=box label=<
+        <TABLE>
+         <TR>
+          <TD BGCOLOR="bisque">Facts granularity order item</TD>.
+         </TR>
+         <TR>
+          <TD BGCOLOR="white">Quantity</TD>
+         </TR>
+         <TR>
+          <TD BGCOLOR="white">Revenue</TD>
+         </TR>
+         <TR>
+          <TD BGCOLOR="white">Open order</TD>
+         </TR>
+         <TR>
+          <TD BGCOLOR="white">Fully delivered order</TD>
+         </TR>
+         <TR>
+          <TD BGCOLOR="white">Difference between requested date and delivery date in days</TD>
+         </TR>
+        </TABLE>
+    >
+]
+
+Association_partner_customer_order->orderitem
+Association_partner_order->orderitem
+Category_Product->orderitem
+Report_date->orderitem
+Sales_date->orderitem
+on_time_delivery->orderitem
+
+}

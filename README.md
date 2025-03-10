@@ -1,3 +1,5 @@
+This is a dbt project inspired from https://github.com/ddvug/Willibald-Data
+
 ### Using the starter project
 
 1. Download & install python:

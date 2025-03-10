@@ -1,0 +1,51 @@
+Kunde
+---
+KundeID char(13)  PK
+VereinsPartnerID varchar(30) null FK -< VereinsPartner.VereinsPartnerID
+Vorname  varchar(128)
+Name varchar(128)
+Geschlecht char null
+Geburtsdatum date
+Telefon varchar(20) null
+Mobil varchar(20) null
+Email  varchar(128) null
+Kreditkarte varchar(30)
+GueltigBis char(5)
+KKFirma  varchar(128)
+
+
+VereinsPartner
+---
+VereinsPartnerID varchar(30) PK
+KundeIDVerein char(13)  FK -< Kunde.KundeID
+Rabatt1 int
+Rabatt2 int
+Rabatt3 int
+
+
+Produkt
+---
+ProduktID int PK
+KatID varchar(50) FK 
+Bezeichnung varchar(512)
+Umfang varchar(128)
+Typ int
+Preis decimal(5,2)
+Pflanzort varchar(128)
+Pflanzabstand varchar(128)
+
+
+RS_Bestellung
+---
+BestellungID varchar(128) PK
+KundeID char(13) NULL FK >- Kunde.KundeID
+VereinsPartnerID varchar(30) FK >- VereinsPartner.VereinsPartnerID
+Kaufdatum date
+Kreditkarte varchar(30) null
+GueltigBis char(5) null
+KKFirma  varchar(128) null
+ProduktID int PK FK >- Produkt.ProduktID
+Menge int
+Preis numeric(10,2)
+Rabatt numeric(5,2) null
+
